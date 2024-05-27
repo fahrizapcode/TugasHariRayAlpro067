@@ -1,0 +1,19 @@
+spasi | &nsbp; | &#160;
+& | &amp; | &#038;
+` | &apos; | &038;
+< | &lt; | &#060
+> | &gt; | &#062
+copyright | &copy; |&#169
+registerd | &reg; | &#174;
+trademark | &trade;| &#8482
+pound     | &poud; | &#165;
+yen | &yen;| &#165|
+euro | &euro;| &#8364;
+- | &ndash;| &#8211;
+_ | &mdash; | &#8212;
+' | &lsquo; | &#8216;
+" | &idquo; | &#8217;
+bullet | &bull; | &#8226;
+horizontal ellipsis | &hellip; | &#8230; 
+
+

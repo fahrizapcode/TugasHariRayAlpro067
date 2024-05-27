@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Menerapkan rule ke semua h5 asalkan berada dibawah h2 dan masih setingkat */
+      /* setingkat artinya tidak terbungkus apapun  */
+      h2 ~ h5 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h5>Tidak menerapkan rule</h5>
+    <h2>tidak menerapkan rule</h2>
+    <h5>Menerapkan rule</h5>
+    <h5>Menerapkan rule</h5>
+    <div>
+      <h5>Tidak menerapkan rule</h5>
+    </div>
+    <h5>Menerapkan rule</h5>
+  </body>
+</html>

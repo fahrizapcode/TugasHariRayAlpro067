@@ -1,0 +1,8 @@
+A. Rule order
+kasus ketika kita menstyling element 2x, maka yang akan digunakan adalah styling yang paling akhir
+mengingat bahwa css akan membaca dari atas ke bawah
+contoh, ketika kita menstyle <p>, dengan menggunakan external style, dan embedded style, maka yang akan digunakan yang terakhir yaitu yang embedded
+untuk mengorder agar yang external didahulukan gunakan !important
+p {
+    color : red !important
+}

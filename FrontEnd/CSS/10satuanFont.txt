@@ -1,0 +1,7 @@
+Satuan relatif (tergantung sesuatu)
+em => relatif terhadap ukuran font yang sedang digunakan, contoh 3em, artinya 3x lebih besar dari font awal
+vw => Satuan relatif terhadap 1% lebar viewport. Contoh 1vw = 1% dari lebar viewport
+vh => Satuan relatif terhadap 1% tinggi viewport. Contoh 1vh = 1% dari tinggi viewport. 
+
+satuan absolute 
+px => pixel

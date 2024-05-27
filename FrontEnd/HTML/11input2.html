@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Contoh form pemesanan barang -->
+    <!-- attr name menjad key untuk data value yang diambil server -->
+    <!-- contoh dibawah keynya fullname, valuenya data yang diinputkan -->
+    <!-- Action digunakan untuk mengirim data ke alamat API server  -->
+    <!-- Jika tidak menggunakan action, maka data akan dikirim ke alamat yang saat ini sedang di akses -->
+    <form action="https://example.com/jalur/ke/alamat/destinasi" method="GET">
+      <div>
+        <label for="fullname">Nama</label>
+        <input type="text" name="fullname" required />
+      </div>
+      <div>
+        <label for="waktuPemesanan">Waktu Pemesanan</label>
+        <input type="date" name="waktuPemesanan" required />
+      </div>
+      <button type="submit">Pesan</button>
+    </form>
+  </body>
+</html>

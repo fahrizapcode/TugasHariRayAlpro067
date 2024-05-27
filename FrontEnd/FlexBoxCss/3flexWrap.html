@@ -1,0 +1,45 @@
+<!-- nowrap: seluruh flex items hanya akan ditempatkan dalam satu baris meskipun sangat banyak jumlahnya (1 dimensi).
+wrap: nilai ini menyebabkan flex items akan diletakkan ke baris yang baru (berikutnya) sehingga menjadi multiple lines (2 dimensi).
+wrap-reverse: meskipun mirip dengan wrap, nilai ini akan menyebabkan beberapa flex items ditempatkan dengan menambahkan baris sebelumnya. (2 dimensi) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Wrap Flex Container</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 100px;
+        margin-bottom: 8px;
+      }
+      /* agar warnanya selang seling */
+      .box:nth-child(odd) {
+        background-color: blue;
+      }
+      .box:nth-child(even) {
+        background-color: red;
+      }
+      .flex {
+        display: flex;
+        /* flex-wrap: nowrap; */
+        flex-wrap: wrap;
+        /* flex-wrap: wrap-reverse; */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="flex">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+      </div>
+    </main>
+  </body>
+</html>

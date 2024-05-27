@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main {
+        flex-direction: row;
+        width: 100%;
+        height: 1000px;
+        display: flex;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin-right: 30px;
+      }
+      .visible {
+        overflow: visible;
+      }
+      .hidden {
+        overflow: hidden;
+      }
+      .scroll {
+        overflow: scroll;
+      }
+      /* Menyesuaikan, jika text tidak lebih, maka akan visible, jika lebih maka akan scroll */
+      .auto {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <!-- default -->
+      <div class="visible">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat,
+          qui!
+        </p>
+      </div>
+      <!-- menghapus text yang keluar konten -->
+      <div class="hidden">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+          fuga?
+        </p>
+      </div>
+      <!-- scrolling text yang lebih -->
+      <div class="scroll">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus,
+          officia?
+        </p>
+      </div>
+      <div class="auto">
+        <p>Lorem ipsum dolor sit amet consectetur</p>
+      </div>
+      <div class="auto">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
+          delectus? Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+          suscipit!
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
