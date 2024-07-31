@@ -1,8 +1,0 @@
-.second {
-  background-color: #6495ed;
-
-  position: relative;
-  top: 30px;
-  left: 10px;
-}
-/* Perlu diingat bahwa properti top, left, right, dan bottom hanya akan berpengaruh pada elemen yang menerapkan non-static flow, yaitu elemen yang menerapkan nilai relative, absolute, dan fixed pada properti position. */
