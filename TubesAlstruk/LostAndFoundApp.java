@@ -1,3 +1,7 @@
+// ======= Anggota 1: Menangani Materi Sorting =======
+// Anggota pertama bertanggung jawab untuk implementasi sorting (pengurutan barang) berdasarkan nama.
+// Sistem ini akan menggunakan metode pengurutan berdasarkan nama barang (alfabet).
+
 import java.util.*;
 
 // Kelas Item untuk menyimpan data barang yang hilang atau ditemukan
@@ -20,7 +24,48 @@ class Item {
     }
 }
 
-// Kelas ItemNode untuk Linked List
+// ======= Anggota 2: Menangani Materi Searching =======
+// Anggota kedua bertanggung jawab untuk implementasi searching (pencarian barang berdasarkan nama).
+// Menggunakan struktur data Map untuk mencari barang yang hilang atau ditemukan.
+
+class LostAndFoundSystem {
+    Map<String, Item> lostItemsMap;
+    Map<String, Item> foundItemsMap;
+
+    public LostAndFoundSystem() {
+        lostItemsMap = new HashMap<>();
+        foundItemsMap = new HashMap<>();
+    }
+
+    // Mencari barang berdasarkan nama
+    public void searchAndShow(String name) {
+        if (lostItemsMap.containsKey(name)) {
+            System.out.println("Barang Hilang Ditemukan:");
+            System.out.println(lostItemsMap.get(name));
+        } else if (foundItemsMap.containsKey(name)) {
+            System.out.println("Barang Ditemukan Ditemukan:");
+            System.out.println(foundItemsMap.get(name));
+        } else {
+            System.out.println("Barang tidak ditemukan.");
+        }
+    }
+
+    // Menambahkan barang hilang
+    public void addLostItem(String name, String category, String description) {
+        Item item = new Item(name, category, description, true);
+        lostItemsMap.put(name, item);
+    }
+
+    // Menambahkan barang ditemukan
+    public void addFoundItem(String name, String category, String description) {
+        Item item = new Item(name, category, description, false);
+        foundItemsMap.put(name, item);
+    }
+}
+
+// ======= Anggota 3: Menangani Materi Linked List =======
+// Anggota ketiga bertanggung jawab untuk implementasi Linked List untuk menyimpan dan menampilkan barang hilang dan ditemukan.
+
 class ItemNode {
     Item item;
     ItemNode next;
@@ -57,7 +102,9 @@ class ItemList {
     }
 }
 
-// Kelas TreeNode untuk Binary Tree
+// ======= Anggota 4: Menangani Materi Binary Tree =======
+// Anggota keempat bertanggung jawab untuk implementasi Binary Tree yang menyimpan barang berdasarkan nama secara terurut.
+
 class TreeNode {
     Item item;
     TreeNode left, right;
@@ -102,7 +149,10 @@ class BinaryTree {
     }
 }
 
-// Kelas Graph untuk DFS
+// ======= Anggota 5: Menangani Materi Graph DFS =======
+// Anggota kelima bertanggung jawab untuk implementasi Graph dengan algoritma DFS (Depth First Search).
+// DFS digunakan untuk menelusuri hubungan antar barang dalam sistem.
+
 class Graph {
     private Map<String, List<String>> adjacencyList;
 
@@ -131,86 +181,9 @@ class Graph {
     }
 }
 
-// Kelas LostAndFoundSystem untuk mengelola sistem lost and found
-class LostAndFoundSystem {
-    Map<String, Item> lostItemsMap;
-    Map<String, Item> foundItemsMap;
-    ItemList lostItemsList;
-    ItemList foundItemsList;
-    BinaryTree lostItemsTree;
-    BinaryTree foundItemsTree;
-    Graph graph;
+// ======= Anggota 6: Menangani Tampilan Menu Utama =======
+// Anggota keenam bertanggung jawab untuk menangani tampilan menu utama dan interaksi pengguna dengan sistem Lost and Found.
 
-    public LostAndFoundSystem() {
-        lostItemsMap = new HashMap<>();
-        foundItemsMap = new HashMap<>();
-        lostItemsList = new ItemList();
-        foundItemsList = new ItemList();
-        lostItemsTree = new BinaryTree();
-        foundItemsTree = new BinaryTree();
-        graph = new Graph();
-    }
-
-    // Menambahkan barang hilang
-    public void addLostItem(String name, String category, String description) {
-        Item item = new Item(name, category, description, true);
-        lostItemsMap.put(name, item);
-        lostItemsList.addItem(item);
-        lostItemsTree.insert(item);
-    }
-
-    // Menambahkan barang ditemukan
-    public void addFoundItem(String name, String category, String description) {
-        Item item = new Item(name, category, description, false);
-        foundItemsMap.put(name, item);
-        foundItemsList.addItem(item);
-        foundItemsTree.insert(item);
-    }
-
-    // Mencari barang berdasarkan nama
-    public void searchAndShow(String name) {
-        if (lostItemsMap.containsKey(name)) {
-            System.out.println("Barang Hilang Ditemukan:");
-            System.out.println(lostItemsMap.get(name));
-        } else if (foundItemsMap.containsKey(name)) {
-            System.out.println("Barang Ditemukan Ditemukan:");
-            System.out.println(foundItemsMap.get(name));
-        } else {
-            System.out.println("Barang tidak ditemukan.");
-        }
-    }
-
-    // Menampilkan semua barang hilang
-    public void printLostItems() {
-        lostItemsList.displayItems();
-    }
-
-    // Menampilkan semua barang ditemukan
-    public void printFoundItems() {
-        foundItemsList.displayItems();
-    }
-
-    // Mengurutkan barang berdasarkan nama
-    public void sortItemsByName(Map<String, Item> items) {
-        List<Item> itemList = new ArrayList<>(items.values());
-        itemList.sort(Comparator.comparing(item -> item.name));
-        for (Item item : itemList) {
-            System.out.println(item);
-        }
-    }
-
-    // Menambahkan hubungan antar barang dalam graf
-    public void addRelationBetweenItems(String item1, String item2) {
-        graph.addEdge(item1, item2);
-    }
-
-    // Melakukan DFS pada graf
-    public void dfs(String start) {
-        graph.dfs(start);
-    }
-}
-
-// Kelas utama untuk menjalankan aplikasi
 public class LostAndFoundApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
